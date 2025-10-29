@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "./auth.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -44,78 +45,126 @@ export default function Login() {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>Login</h2>
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <input
-          style={styles.input}
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={credentials.email}
-          onChange={handleChange}
-          autoComplete="email"
-          required
-        />
-        <input
-          style={styles.input}
-          name="password"
-          type="password"
-          placeholder="Password"
-          value={credentials.password}
-          onChange={handleChange}
-          autoComplete="current-password"
-          required
-        />
-        <button type="submit" style={styles.button}>
-          Login
-        </button>
-      </form>
+      <div style={styles.formContainer}>
+        <h2 style={styles.title}>🎬 Login to MoView</h2>
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <input
+            style={styles.input}
+            name="email"
+            type="email"
+            placeholder="Email"
+            value={credentials.email}
+            onChange={handleChange}
+            autoComplete="email"
+            required
+          />
+          <input
+            style={styles.input}
+            name="password"
+            type="password"
+            placeholder="Password"
+            value={credentials.password}
+            onChange={handleChange}
+            autoComplete="current-password"
+            required
+          />
+          <button type="submit" style={styles.button}>
+            Login
+          </button>
+        </form>
 
-      {message && <p style={message.startsWith("✅") ? styles.success : styles.error}>{message}</p>}
-      
-      <p style={{ marginTop: '15px' }}>
-        Don't have an account? <Link to="/register" style={{ color: '#007bff', textDecoration: 'none' }}>Register here</Link>
-      </p>
+        {message && <p style={message.startsWith("✅") ? styles.success : styles.error}>{message}</p>}
+        
+        <p style={styles.linkText}>
+          Don't have an account? <Link to="/register" style={{ color: '#e50914', textDecoration: 'none', fontWeight: 'bold' }}>Register here</Link>
+        </p>
+      </div>
     </div>
   );
 }
 
 const styles = {
   container: {
-    maxWidth: "400px",
-    margin: "50px auto",
+    minHeight: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    background: "linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(229, 9, 20, 0.7)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1920')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
     padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "8px",
-    textAlign: "center",
-    fontFamily: "Arial",
+  },
+  formContainer: {
+    maxWidth: "450px",
+    width: "100%",
+    padding: "40px 35px",
+    backgroundColor: "rgba(0, 0, 0, 0.85)",
+    borderRadius: "15px",
+    boxShadow: "0 8px 32px rgba(229, 9, 20, 0.4)",
+    backdropFilter: "blur(10px)",
+    border: "1px solid rgba(229, 9, 20, 0.3)",
   },
   title: {
-    marginBottom: "20px",
+    marginBottom: "30px",
+    fontSize: "32px",
+    fontWeight: "bold",
+    color: "#fff",
+    textAlign: "center",
+    textShadow: "0 0 20px rgba(229, 9, 20, 0.5)",
   },
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "10px",
+    gap: "20px",
   },
   input: {
-    padding: "10px",
+    padding: "15px 20px",
     fontSize: "16px",
+    borderRadius: "8px",
+    border: "2px solid rgba(255, 255, 255, 0.2)",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    color: "#fff",
+    outline: "none",
+    transition: "all 0.3s ease",
   },
   button: {
-    padding: "10px",
-    backgroundColor: "#28a745",
+    padding: "15px",
+    backgroundColor: "#e50914",
     color: "white",
     border: "none",
     cursor: "pointer",
-    borderRadius: "5px",
+    borderRadius: "8px",
+    fontSize: "18px",
+    fontWeight: "bold",
+    transition: "all 0.3s ease",
+    boxShadow: "0 4px 15px rgba(229, 9, 20, 0.4)",
+    marginTop: "10px",
   },
   success: {
-    color: "green",
-    marginTop: "10px",
+    color: "#4CAF50",
+    marginTop: "15px",
+    textAlign: "center",
+    fontSize: "16px",
+    fontWeight: "500",
+    backgroundColor: "rgba(76, 175, 80, 0.1)",
+    padding: "10px",
+    borderRadius: "5px",
   },
   error: {
-    color: "crimson",
-    marginTop: "10px",
+    color: "#ff6b6b",
+    marginTop: "15px",
+    textAlign: "center",
+    fontSize: "16px",
+    fontWeight: "500",
+    backgroundColor: "rgba(255, 107, 107, 0.1)",
+    padding: "10px",
+    borderRadius: "5px",
+  },
+  linkText: {
+    marginTop: "20px",
+    textAlign: "center",
+    color: "#ccc",
+    fontSize: "14px",
   },
 };
