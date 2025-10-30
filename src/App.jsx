@@ -5,7 +5,7 @@ import Movies from "./components/Movies";
 import MovieDetails from "./components/MovieDetails";
 import Favorites from "./components/Favourites";
 import Register from "./pages/Register";
-import Login from "./pages/Login";
+import Login from "./pages/login";
 
 export default function App() {
   return (
