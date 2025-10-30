@@ -76,7 +76,7 @@ export default function Login() {
         {message && <p style={message.startsWith("✅") ? styles.success : styles.error}>{message}</p>}
         
         <p style={styles.linkText}>
-          Don't have an account? <Link to="/register" style={{ color: '#667eea', textDecoration: 'none', fontWeight: 'bold' }}>Register here</Link>
+          Don't have an account? <Link to="/register" style={{ color: '#000000', textDecoration: 'none', fontWeight: 'bold' }}>Register here</Link>
         </p>
       </div>
     </div>
@@ -89,8 +89,10 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)",
-    backgroundSize: "400% 400%",
+    background: "linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(26, 0, 0, 0.8) 25%, rgba(51, 0, 0, 0.75) 50%, rgba(26, 0, 0, 0.8) 75%, rgba(0, 0, 0, 0.85) 100%), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1920')",
+    backgroundSize: "400% 400%, cover",
+    backgroundPosition: "center, center",
+    backgroundAttachment: "fixed, fixed",
     animation: "gradient 15s ease infinite",
     padding: "20px",
   },
@@ -98,12 +100,12 @@ const styles = {
     maxWidth: "450px",
     width: "100%",
     padding: "40px 35px",
-    backgroundColor: "rgba(255, 255, 255, 0.95)",
+    backgroundColor: "rgba(255, 255, 255, 0.98)",
     borderRadius: "20px",
-    boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.5)",
-    backdropFilter: "blur(10px)",
+    boxShadow: "0 20px 60px rgba(229, 9, 20, 0.6), 0 0 100px rgba(0, 0, 0, 0.5)",
+    backdropFilter: "blur(20px)",
     border: "3px solid transparent",
-    backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, #667eea, #764ba2, #f093fb)",
+    backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, #e50914 0%, #000000 50%, #e50914 100%)",
     backgroundOrigin: "border-box",
     backgroundClip: "padding-box, border-box",
   },
@@ -111,12 +113,8 @@ const styles = {
     marginBottom: "30px",
     fontSize: "32px",
     fontWeight: "bold",
-    background: "linear-gradient(135deg, #667eea, #764ba2)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    backgroundClip: "text",
+    color: "#000000",
     textAlign: "center",
-    textShadow: "none",
   },
   form: {
     display: "flex",
@@ -136,7 +134,7 @@ const styles = {
   },
   button: {
     padding: "15px",
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    background: "linear-gradient(135deg, #e50914 0%, #8B0000 100%)",
     color: "white",
     border: "none",
     cursor: "pointer",
@@ -144,7 +142,7 @@ const styles = {
     fontSize: "18px",
     fontWeight: "bold",
     transition: "all 0.3s ease",
-    boxShadow: "0 8px 20px rgba(102, 126, 234, 0.4)",
+    boxShadow: "0 8px 20px rgba(229, 9, 20, 0.5)",
     marginTop: "10px",
   },
   success: {
