@@ -14,7 +14,7 @@ export default function Movies() {
 
   const movies = state.movies || [];
 
-  // Filter movies based on search query
+  
   const filteredMovies = useMemo(() => {
     if (!state.searchQuery) return movies;
     return movies.filter(movie =>
@@ -27,32 +27,7 @@ export default function Movies() {
       <h1>🎬 Popular Movies</h1>
       
       <div style={{ marginBottom: '20px', display: 'flex', gap: '10px' }}>
-        <button 
-          onClick={fetchMovies}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#666',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-          }}
-        >
-          🔄 Display Movies
-        </button>
-        <button 
-          onClick={resetMovies}
-          style={{
-            padding: '10px 20px',
-            backgroundColor: '#666',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-          }}
-        >
-          🧹 Reset
-        </button>
+       
       </div>
 
       <SearchBar />

@@ -1,10 +1,10 @@
 import { SET_MOVIES, RESET_MOVIES, SELECT_MOVIE, ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES, SEARCH_MOVIES } from "./action";
 
 const initialState = {
-  movies: [],      // list of movies
-  selectedMovie: null, // optional: currently selected movie
-  favorites: [],   // favorite movies
-  searchQuery: "", // current search term
+  movies: [],      
+  selectedMovie: null, 
+  favorites: [],   
+  searchQuery: "", 
 };
 
 export default function reducer(state = initialState, action) {

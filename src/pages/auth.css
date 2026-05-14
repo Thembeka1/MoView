@@ -1,6 +1,4 @@
-/* Auth Pages Enhancements */
 
-/* Animated gradient background with smooth blending */
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -19,7 +17,7 @@
   }
 }
 
-/* Input placeholder styling */
+
 input::placeholder {
   color: rgba(0, 0, 0, 0.4);
   opacity: 1;
@@ -33,7 +31,7 @@ input::-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* Input focus effects */
+
 input:focus {
   border-color: #e50914 !important;
   background-color: #fff !important;
@@ -41,7 +39,7 @@ input:focus {
   transform: translateY(-2px);
 }
 
-/* Button hover effects */
+
 button:hover {
   transform: translateY(-3px) scale(1.02);
   box-shadow: 0 12px 30px rgba(229, 9, 20, 0.7) !important;
@@ -52,19 +50,19 @@ button:active {
   transform: translateY(-1px) scale(1);
 }
 
-/* Link hover effects */
+
 a:hover {
   color: #333333 !important;
   text-decoration: underline !important;
   transform: scale(1.05);
 }
 
-/* Smooth animations */
+
 * {
   transition: all 0.3s ease;
 }
 
-/* Form container animation */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -80,13 +78,12 @@ a:hover {
   animation: fadeInUp 0.6s ease-out;
 }
 
-/* Smooth color blending for all elements */
 body, div, button, input {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Enhanced gradient blending */
+
 * {
   box-sizing: border-box;
   background-blend-mode: normal;

@@ -13,7 +13,7 @@ export default function Favorites() {
       {favorites.length === 0 ? (
         <div style={{ textAlign: 'center', padding: '60px 20px' }}>
           <p style={{ fontSize: '18px', color: '#666' }}>No favorites yet!</p>
-          <Link to="/" style={{
+          <Link to="/Movies" style={{
             display: 'inline-block',
             marginTop: '15px',
             padding: '12px 25px',

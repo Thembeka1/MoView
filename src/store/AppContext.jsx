@@ -13,7 +13,7 @@ export function AppProvider({ children }) {
     searchQuery: "",
   });
 
-  // Save favorites to localStorage whenever they change
+ 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(state.favorites));
   }, [state.favorites]);
@@ -21,10 +21,10 @@ export function AppProvider({ children }) {
   const fetchMovies = async () => {
     const API_KEY = (import.meta.env.VITE_TMDB_API_KEY || '').trim();
     const RAW_TOKEN = (import.meta.env.VITE_TMDB_BEARER || '').trim();
-    // If the user mistakenly included 'Bearer ' in the env value, strip it
+   
     const TOKEN = RAW_TOKEN.startsWith('Bearer ') ? RAW_TOKEN.slice(7) : RAW_TOKEN;
 
-    // Prefer v3 API key if provided; fall back to v4 Bearer token only when no API key
+    
     const useToken = !API_KEY && Boolean(TOKEN);
     const base = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
     const url = useToken ? base : `${base}${API_KEY ? `&api_key=${API_KEY}` : ''}`;

@@ -8,15 +8,15 @@ export default function Navigation() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // Check login status on mount
+   
     setIsLoggedIn(localStorage.getItem('isLoggedIn') === 'true');
 
-    // Monitor localStorage changes
+   
     const checkLoginStatus = () => {
       const loginStatus = localStorage.getItem('isLoggedIn') === 'true';
       const userData = localStorage.getItem('user');
       
-      // If user data is deleted from localStorage, logout
+     
       if (!userData && isLoggedIn) {
         handleLogout();
       }
@@ -24,10 +24,10 @@ export default function Navigation() {
       setIsLoggedIn(loginStatus && userData !== null);
     };
 
-    // Check every second for localStorage changes
+  
     const interval = setInterval(checkLoginStatus, 1000);
 
-    // Listen to storage events (for changes in other tabs)
+   
     window.addEventListener('storage', checkLoginStatus);
 
     return () => {
@@ -38,9 +38,9 @@ export default function Navigation() {
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('user'); // Also clear user data
+    localStorage.removeItem('user'); 
     setIsLoggedIn(false);
-    navigate('/login');
+    navigate('/Movies');
   };
 
   return (
