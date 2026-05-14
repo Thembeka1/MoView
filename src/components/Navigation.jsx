@@ -84,8 +84,7 @@ export default function Navigation() {
                 borderRadius: '4px',
                 cursor: 'pointer',
               }}
-            >
-              Logout
+            >Logout
             </button>
           </>
         ) : (
