@@ -30,7 +30,7 @@ export default function Movies() {
        
       </div>
 
-      <SearchBar />
+      <SearchBar/>
 
       {movies.length === 0 ? (
         <p>Loading movies...</p>
